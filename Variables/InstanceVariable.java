@@ -1,3 +1,5 @@
+package Variables;
+
 public class InstanceVariable {
     int a;
 

@@ -1,3 +1,5 @@
+package Variables;
+
 public class StaticVariable {
 
     static int a = 8;

@@ -1,3 +1,5 @@
+package Variables;
+
 public class LocalVariable {
 
     public static void main(String[] args) {
