@@ -2,6 +2,9 @@ package ControlStructures;
 
 public class Prime {
     public static void main(String[] args) {
+        // prime is a non static method so we have to create object as
+        // static method can't access a nonstatic method
+        // to direct access prime should be static
         Prime p = new Prime();
         p.prime(35);
     }

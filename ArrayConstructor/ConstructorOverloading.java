@@ -7,7 +7,7 @@ public class ConstructorOverloading {
     }
 
     ConstructorOverloading(int a) {
-        System.out.println("I am parameterized constructor");
+        System.out.println("I am parameterized constructor with constructor overloading");
         System.out.println("The value of a is:" + a);
     }
 
