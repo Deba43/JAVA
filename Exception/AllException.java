@@ -44,7 +44,6 @@ public class AllException {
 
     public static void main(String[] args) {
         try {
-            // Trying to read a file
             getNumber(-6);
         } catch (IOException e) {
             // Handling the thrown exception
