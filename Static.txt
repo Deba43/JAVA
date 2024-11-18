@@ -1,0 +1,72 @@
+Sure! Here's a simple example that demonstrates the use of static blocks, static variables, static methods, and static nested classes, all in a single Java program:
+
+### Example Code:
+
+```java
+class OuterClass {
+    // Static variable
+    static int staticVar = 10;
+
+    // Static block
+    static {
+        System.out.println("Static block is executed.");
+        staticVar = 20; // Modifying the static variable inside the static block
+    }
+
+    // Static method
+    static void staticMethod() {
+        System.out.println("Static method is called.");
+        System.out.println("Value of staticVar: " + staticVar);
+    }
+
+    // Static nested class
+    static class StaticNestedClass {
+        void display() {
+            System.out.println("Inside the static nested class.");
+        }
+    }
+
+    public static void main(String[] args) {
+        // Calling static method
+        OuterClass.staticMethod();
+
+        // Creating an object of the static nested class
+        OuterClass.StaticNestedClass nestedObj = new OuterClass.StaticNestedClass();
+        nestedObj.display();
+    }
+}
+```
+
+### Explanation:
+
+1. **Static Variable (`staticVar`)**:
+   - The static variable `staticVar` is shared across all instances of the class.
+   - It's initialized to 10, but the static block modifies it to 20.
+
+2. **Static Block**:
+   - The static block is executed only once when the class is loaded.
+   - In this case, it prints a message and modifies the value of `staticVar`.
+
+3. **Static Method (`staticMethod`)**:
+   - This method can be called without creating an instance of the class.
+   - It prints a message and the current value of `staticVar`.
+
+4. **Static Nested Class (`StaticNestedClass`)**:
+   - This class is nested inside `OuterClass` and is static, meaning it can be instantiated without an instance of `OuterClass`.
+   - The method `display()` inside it prints a message.
+
+### Output:
+
+```
+Static block is executed.
+Static method is called.
+Value of staticVar: 20
+Inside the static nested class.
+```
+
+### Key Points:
+
+- **Static Block** runs when the class is loaded into memory (before the `main` method).
+- **Static Variables** can be accessed and modified in static blocks or static methods.
+- **Static Methods** can be called directly using the class name without creating an object.
+- **Static Nested Classes** can be instantiated independently of the outer class.

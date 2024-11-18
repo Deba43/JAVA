@@ -1,0 +1,36 @@
+Constructor Chaining using this keyword ---------
+
+Constructor chaining is the process of calling one constructor from another constructor with respect to current object. 
+
+One of the main use of constructor chaining is to avoid duplicate codes while having multiple constructor (by means of constructor overloading) and make code more readable.
+
+Constructor chaining can be done in two ways: 
+ 
+
+Within same class: It can be done using this() keyword for constructors in the same class
+From base class: by using super() keyword to call the constructor from the base class.
+
+The this() expression should always be the first line of the constructor.
+There should be at-least be one constructor without the this() keyword (constructor 3 in above example).
+Constructor chaining can be achieved in any order.
+
+Example--------------
+
+class Hello {
+    Hello(){
+        System.out.println("This is a non parameterized constructor");
+    }
+    Hello(int a){
+        this();
+        System.out.println("The value of a is " + a);
+        
+    }
+    Hello(int i, int j)//Constructor Overloading
+    {
+        this(5);
+        System.out.println(i+j);
+    }
+    public static void main(String[] args) {
+        new Hello(7, 8);
+    }
+}

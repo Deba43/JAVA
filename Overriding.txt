@@ -1,0 +1,21 @@
+--Overriding and Access Modifiers
+The access modifier for an overriding method can allow more, but not less, access than the overridden method. For example, a protected instance method in the superclass can be made public, but not private, in the subclass. Doing so will generate a compile-time error. 
+
+--Final methods can not be overridden
+
+--Static methods(Method Hiding) can not be overridden(Method Overriding vs Method Hiding): 
+
+--Invoking overridden method from sub-class
+We can call the parent class method in the overriding method using the super keyword. 
+
+--Private methods can not be overridden
+Private methods cannot be overridden as they are bonded during compile time. Therefore we can’t even override private methods in a subclass.(See this for details).
+
+ --The overriding method must have the same return type (or subtype)
+From Java 5.0 onwards it is possible to have different return types for an overriding method in the child class, but the child’s return type should be a sub-type of the parent’s return type. This phenomenon is known as the covariant return type.
+
+--Overriding and Constructor
+We can not override the constructor as the parent and child class can never have a constructor with the same name(The constructor name must always be the same as the Class name).
+
+---Overriding and Abstract Method
+Abstract methods in an interface or abstract class are meant to be overridden in derived concrete classes otherwise a compile-time error will be thrown.

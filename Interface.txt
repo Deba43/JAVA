@@ -1,0 +1,40 @@
+An Interface in Java programming language is defined as an abstract type . A Java interface contains static constants and abstract methods.
+
+We can achieve 100% abstraction using interfaces.
+
+It is used to achieve total abstraction.
+Since java does not support multiple inheritances in the case of class, by using an interface it can achieve multiple inheritances.
+Any class can extend only one class, but can implement multiple interfaces.
+It is also used to achieve loose coupling.
+Interfaces are used to implement abstraction. 
+
+--------------------
+
+interface A {
+    int i = 9; // implicitly public, static, and final
+
+    void greet(); // abstract method
+}
+
+interface B extends A {
+    int j = 4; // implicitly public, static, and final
+
+    // In Java, interfaces cannot have method implementations unless they are default methods.
+    default void greet() {
+        System.out.println("I'm in interface B and the value of j is " + j);
+    }
+}
+
+class C implements A, B {
+    @Override
+    public void greet() {
+        System.out.println("Class C overrides greet()");
+    }
+
+    public static void main(String[] args) {
+        C obj = new C();
+        obj.greet(); // Calls greet() from class C
+        System.out.println("Value of j: " + obj.j);
+        System.out.println("Value of i: " + obj.i);
+    }
+}

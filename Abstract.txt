@@ -1,0 +1,34 @@
+Abstraction in Java is the process in which we only show essential details/functionality to the user. The non-essential implementation details are not displayed to the user.
+
+Data Abstraction may also be defined as the process of identifying only the required characteristics of an object ignoring the irrelevant details. The properties and behaviours of an object differentiate it from other objects of similar type and also help in classifying/grouping the objects.
+
+----------------
+
+
+abstract class Hello {
+    // The greet() method needs a return type, void in this case
+    abstract void greet();
+
+    // Constructor for the abstract class
+    Hello() {
+        System.out.println("Abstract class Constructor");
+    }
+}
+
+class World extends Hello {
+    // Constructor for the World class
+    World() {
+        super(); // Calls the constructor of the abstract class Hello
+    }
+
+    // Override the abstract greet() method from Hello
+    @Override
+    void greet() {
+        System.out.println("World");
+    }
+
+    public static void main(String[] args) {
+        World w = new World(); // Creates an instance of World
+        w.greet(); // Calls the overridden greet() method
+    }
+}
