@@ -1,0 +1,67 @@
+Internet Addressing:
+Internet addressing refers to assigning unique identifiers (IP addresses) to devices connected to the Internet, allowing them to send and receive data. IP addresses are of two main types:
+
+IPv4: 32-bit address (e.g., 192.168.0.1).
+IPv6: 128-bit address designed to replace IPv4 and accommodate the growing number of devices connected to the Internet.
+Each device needs an IP address for communication, and networks use these addresses to route packets of data between devices.
+
+Address Resolution Protocol (ARP) / Reverse Address Resolution Protocol (RARP):
+ARP (Address Resolution Protocol): ARP maps a device’s IP address to its MAC address (hardware address) on a local network. When a device wants to communicate with another device, it needs the destination's MAC address to send data on the local network, so it sends an ARP request, which is answered by the device with the matching IP address.
+
+Example: If device A wants to communicate with device B, it sends an ARP request asking, "What is the MAC address for IP address 192.168.1.2?"
+
+RARP (Reverse Address Resolution Protocol): RARP is used to map a device's MAC address to its IP address, primarily used by diskless workstations when booting up. RARP has largely been replaced by DHCP (Dynamic Host Configuration Protocol), which serves similar functions with more advanced capabilities.
+
+Routing IP Datagrams:
+Routing is the process of determining the path that data packets (IP datagrams) will take through a network. Routers inspect the destination IP address in each packet and forward the packet toward its destination through the best available path. Routing decisions are based on routing tables, which can be dynamically updated by protocols like OSPF (Open Shortest Path First) or BGP (Border Gateway Protocol).
+
+Types of Routing:
+
+Static Routing: Manually configured routes that do not change unless updated by the network administrator.
+Dynamic Routing: Automatically updates routes based on network changes, using routing protocols like RIP (Routing Information Protocol) or OSPF.
+Reliable Stream Transport Service (TCP):
+TCP (Transmission Control Protocol) provides reliable, connection-oriented communication between two devices on a network. It ensures that data packets are delivered in the correct order and without errors. TCP performs error checking, acknowledgment, and retransmission of lost packets. TCP is widely used for applications where data integrity is crucial, such as web browsing, email, and file transfers.
+
+TCP Features:
+
+Connection establishment: The client and server establish a connection using a three-way handshake.
+Error detection and correction: Each segment has a checksum to ensure data integrity.
+Flow control: TCP uses windowing to manage data flow between the sender and receiver.
+Congestion control: TCP adjusts the rate of data transmission based on network congestion.
+TCP/IP Over ATM Networks:
+ATM (Asynchronous Transfer Mode) is a high-speed networking technology used primarily for carrying voice, video, and data over a network. ATM is a cell-based switching and multiplexing technology designed to handle multiple types of traffic simultaneously.
+
+TCP/IP over ATM: When transmitting TCP/IP packets over an ATM network, the data is broken into fixed-size cells (53 bytes) and transported using ATM’s cell-switching techniques. The TCP/IP stack operates independently of the underlying transport mechanism, so it can run over any network, including ATM.
+
+The challenge in TCP/IP over ATM lies in managing the performance characteristics of ATM (such as latency and bandwidth) and adapting the IP data to fit the cell-based structure of ATM.
+
+Internet Applications:
+E-mail: Email is one of the most widely used Internet applications. It allows users to send and receive messages electronically. The key protocols used in email systems are:
+
+SMTP (Simple Mail Transfer Protocol): Used to send emails between servers.
+IMAP (Internet Message Access Protocol) / POP3 (Post Office Protocol): Used to retrieve emails from the server to the client.
+Example Workflow:
+
+An email is sent using SMTP from a client to a server.
+The server stores the email.
+The recipient's client retrieves the email using IMAP or POP3.
+Telnet: Telnet is a network protocol used to provide a command-line interface for communication with a remote device or server over TCP. Telnet operates on port 23 and was widely used for remote administration of devices. However, due to security concerns (since it transmits data, including passwords, in plain text), it has largely been replaced by SSH (Secure Shell), which encrypts communication.
+
+FTP (File Transfer Protocol): FTP is a protocol used to transfer files between a client and a server over the Internet or an intranet. FTP operates over TCP and uses two channels:
+
+Control Channel: Used for sending commands and responses.
+Data Channel: Used for transferring the actual data.
+FTP can be run in two modes:
+
+Active Mode: The client opens a random port, and the server connects back to it.
+Passive Mode: The server opens a port, and the client connects to it, which is useful for clients behind firewalls.
+NFS (Network File System): NFS allows a computer to access files over a network as if they were local files. It is commonly used in UNIX and Linux environments to share files between systems. NFS operates over the TCP/IP protocol and typically uses port 2049. NFS allows clients to mount shared directories from an NFS server and perform file operations like reading and writing files remotely.
+
+Internet Traffic Management: Traffic management refers to the techniques used to optimize and control the flow of data across a network. In the context of the Internet, it involves managing the volume of data traffic, preventing congestion, ensuring quality of service (QoS), and providing efficient routing.
+
+Key techniques for managing Internet traffic include:
+
+Load Balancing: Distributing traffic evenly across servers to prevent any one server from being overwhelmed.
+Traffic Shaping: Controlling the flow of traffic by limiting the rate at which data is transmitted to prevent congestion.
+QoS (Quality of Service): Prioritizing certain types of traffic (e.g., VoIP or video conferencing) to ensure low latency and minimal disruption.
+Congestion Control: Adjusting the rate of data transmission when network congestion is detected to prevent packet loss and delays.
