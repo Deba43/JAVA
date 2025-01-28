@@ -6,7 +6,7 @@ Multithreading allows a single application to perform multiple tasks at the same
 
 package MultiThreading;
 
-public class a extends Thread {
+public class MyThread2 extends Thread {
     public MyThread2(String name) {
         super(name);
     }
